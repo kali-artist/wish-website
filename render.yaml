@@ -1,0 +1,29 @@
+# Render Blueprint 配置 - 自动创建 Render Web Service
+# https://docs.render.com/blueprint-spec
+
+services:
+  - type: web_service
+    name: wish-website
+    runtime: node
+    plan: free
+    region: singapore
+    branch: main
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: WISH_PASSWORD
+        value: wish2026
+      - key: OSS_REGION
+        value: oss-cn-beijing
+      - key: OSS_ACCESS_KEY_ID
+        sync: false
+        value: PLACEHOLDER_REPLACE_AFTER_CREATION
+      - key: OSS_ACCESS_KEY_SECRET
+        sync: false
+        value: PLACEHOLDER_REPLACE_AFTER_CREATION
+      - key: OSS_BUCKET
+        value: aikaka-use
+      - key: NODE_ENV
+        value: production
