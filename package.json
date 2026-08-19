@@ -1,0 +1,16 @@
+{
+  "name": "wish-website",
+  "version": "1.0.0",
+  "description": "电影感心愿实现网站 - 三个不可恢复的愿望",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.6",
+    "express": "^4.22.2"
+  },
+  "author": "",
+  "license": "MIT"
+}
