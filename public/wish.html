@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Wishes · 许愿</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='%23050409'/><text x='32' y='44' font-size='40' text-anchor='middle' fill='%23d4a574'>✦</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Serif+SC:wght@200;300;400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-wish">
+  <canvas id="starfield"></canvas>
+  <div id="aurora"></div>
+  <div class="godray"></div>
+
+  <div class="letterbox top"></div>
+  <div class="letterbox bottom"></div>
+
+  <div class="corner-mark tl"></div>
+  <div class="corner-mark tr"></div>
+  <div class="corner-mark bl"></div>
+  <div class="corner-mark br"></div>
+
+  <div class="chapter-tag" id="chapterTag">第一章 · 许愿</div>
+  <div class="timecode" id="timecode">REC 00:00:00:00</div>
+
+  <main class="scene">
+    <div class="vignette"></div>
+    <div class="grain"></div>
+
+    <header class="topbar">
+      <div class="brand">✦ 三 个 愿 望</div>
+      <button class="link-btn" id="logoutBtn">退出</button>
+    </header>
+
+    <section class="hero">
+      <h1 class="hero-title" id="heroTitle">请许下你的愿望</h1>
+      <div class="hero-sub">愿力有限 · 一旦许下 · 永恒刻痕</div>
+    </section>
+
+    <section class="slots" id="slots">
+      <article class="slot" data-i="0">
+        <div class="slot-num">壹</div>
+        <div class="slot-content"></div>
+      </article>
+      <div class="slot-divider"></div>
+      <article class="slot" data-i="1">
+        <div class="slot-num">贰</div>
+        <div class="slot-content"></div>
+      </article>
+      <div class="slot-divider"></div>
+      <article class="slot" data-i="2">
+        <div class="slot-num">叁</div>
+        <div class="slot-content"></div>
+      </article>
+    </section>
+
+    <div class="counter">
+      <span class="counter-label">剩余</span>
+      <span class="counter-value" id="counterValue">3</span>
+      <span class="counter-divider">/</span>
+      <span class="counter-max">3</span>
+    </div>
+
+    <section class="wish-form-wrap" id="formWrap">
+      <form class="wish-form" id="wishForm">
+        <div class="input-wrap">
+          <textarea
+            id="wishContent"
+            rows="3"
+            maxlength="500"
+            placeholder="写下你的心愿…"
+            spellcheck="false"></textarea>
+          <div class="input-line"></div>
+          <div class="char-count" id="charCount">0 / 500</div>
+        </div>
+        <button type="submit" class="btn-cinematic btn-large" id="wishBtn">
+          <span>确认许愿</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M1 8H15M15 8L9 2M15 8L9 14" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </form>
+      <div class="warning">此操作不可逆 · 用尽即止</div>
+    </section>
+
+    <section class="exhausted hidden" id="exhausted">
+      <h2>愿 望 已 尽</h2>
+      <p>三愿用尽 · 命运已定 · 感谢你的使用</p>
+    </section>
+  </main>
+
+  <canvas id="burst"></canvas>
+  <script src="/js/starfield.js"></script>
+  <script src="/js/wish.js"></script>
+</body>
+</html>
