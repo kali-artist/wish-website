@@ -1,0 +1,9 @@
+node_modules/
+data/wishes.json
+data/sessions.json
+*.log
+.DS_Store
+.env
+.env.local
+启动.bat
+.playwright-cli/
